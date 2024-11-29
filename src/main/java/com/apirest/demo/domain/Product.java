@@ -3,14 +3,14 @@ package com.apirest.demo.domain;
 public class Product {
 
     private Integer id;
-    private String nombre;
-    private Double precio;
+    private String name;
+    private Double price;
     private Integer stock;
 
     public Product(Integer id, String nombre, Double precio, Integer stock) {
         this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
+        this.name = nombre;
+        this.price = precio;
         this.stock = stock;
     }
 
@@ -22,20 +22,20 @@ public class Product {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String nombre) {
+        this.name = nombre;
     }
 
-    public Double getPrecio() {
-        return precio;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setPrecio(Double precio) {
-        this.precio = precio;
+    public void setPrice(Double precio) {
+        this.price = precio;
     }
 
     public Integer getStock() {
