@@ -13,6 +13,7 @@ public class ProductsServiceImpl implements ProductService {
             new Product(2, "Product2", 5.99, 25),
             new Product(3, "Product 3", 299.99, 15)));
 
+    @Override
     public List<Product> getProducts() {
         return products;
     }

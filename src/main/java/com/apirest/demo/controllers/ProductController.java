@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.apirest.demo.service.ProductsServiceImpl;
 
+
 @RestController
 @RequestMapping("/product")
 public class ProductController {
 
-    ProductsServiceImpl productService = new ProductsServiceImpl();
+    ProductService productService = new ProductsServiceImpl();
 
     @GetMapping
     public ResponseEntity<?> getProducts() {
