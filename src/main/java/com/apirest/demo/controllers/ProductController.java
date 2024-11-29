@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.apirest.demo.service.ProductService;
+import com.apirest.demo.service.ProductsServiceImpl;
+
 
 @RestController
 @RequestMapping("/product")
