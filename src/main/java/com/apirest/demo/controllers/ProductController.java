@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.apirest.demo.service.ProductService;
 import com.apirest.demo.service.ProductsServiceImpl;
 
-
 @RestController
 @RequestMapping("/product")
 public class ProductController {
