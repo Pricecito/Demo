@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.apirest.demo.domain.Product;
 
-public class ProductsServiceImpl {
+public class ProductsServiceImpl implements ProductService {
     // Aqui ira toda la logica de la gestión de los productos
     List<Product> products = new ArrayList<>(Arrays.asList(
             new Product(1, "Product1", 10.99, 10),
