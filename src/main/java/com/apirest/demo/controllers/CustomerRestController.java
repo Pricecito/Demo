@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -33,7 +32,7 @@ public class CustomerRestController {
                     new Customer(3, "Carlos", "carlos", "1254")));
 
     // Ambas significan los mismo, respodera a las peticiones GET
-    //@RequestMapping(method = RequestMethod.GET)
+    // @RequestMapping(method = RequestMethod.GET)
     @GetMapping
     public ResponseEntity<List<Customer>> getCustomers() {
         // return customers;
@@ -43,7 +42,7 @@ public class CustomerRestController {
 
     // para usar parametros web
     // @RequestMapping(value = "/{username}", method = RequestMethod.GET)
-     @GetMapping("/{username}")
+    @GetMapping("/{username}")
     public ResponseEntity<?/* el retorno puede variar */> getCliente(@PathVariable String username) {
         for (Customer v : customers) {
             if (v.getName().equalsIgnoreCase(username)) {
@@ -60,7 +59,7 @@ public class CustomerRestController {
     // El metodo permite o le diceal servidor registrar un nuevo registro con los
     // datosen JSon enviados desde el cliente
 
-    //@RequestMapping(method = RequestMethod.POST)
+    // @RequestMapping(method = RequestMethod.POST)
     @PostMapping
     public ResponseEntity<?> postCustomer(@RequestBody Customer customer) {
         customers.add(customer);
@@ -94,7 +93,7 @@ public class CustomerRestController {
 
     // metodo DELETE para eliminar registros
     // @RequestMapping(value = "/{Id}", method = RequestMethod.DELETE)
-     @DeleteMapping("/{Id}")
+    @DeleteMapping("/{Id}")
     public ResponseEntity<?> deleteCustomer(@PathVariable int Id) {
         for (Customer c : customers) {
             if (c.getID() == Id) {
@@ -106,7 +105,7 @@ public class CustomerRestController {
     }
 
     // metodo PATCHMapping para poder modificar solo algunos campos
-    //@RequestMapping(method = RequestMethod.PATCH)
+    // @RequestMapping(method = RequestMethod.PATCH)
     @PatchMapping
     public ResponseEntity<?> patchCustomer(@RequestBody Customer customer) {
         for (Customer c : customers) {

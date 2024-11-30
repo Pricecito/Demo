@@ -4,8 +4,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.apirest.demo.domain.Product;
 
+@Service
+// indicar a Spring que esto es un Bean de servicio para que lo almacene para
+// que cuando se quiera hacer una instancia (dependencia) y poder inyectarla
 public class ProductsServiceImpl implements ProductService {
     // Aqui ira toda la logica de la gestión de los productos
     List<Product> products = new ArrayList<>(Arrays.asList(
