@@ -1,6 +1,7 @@
 package com.apirest.demo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,9 @@ public class ProductController {
 
     // Inyeccion de dependencias por campo (atributo)
     @Autowired
+    // con Qulifier podemos establecer con que bean trabajar en caso haya varios del
+    // mismo tipo
+    @Qualifier("listResourseService")
     private ProductService productService;
 
     @GetMapping
