@@ -3,6 +3,8 @@ package com.apirest.demo.service;
 import java.io.IOException;
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 //Primary se usa para resolver conflictos cuando hay multiples beans del mismo tipo en la app indicando cual de ellos debe ser preferido.
 @Primary
-@Service("jsonResourseService") // El parentesis es para identificarlo
+@Service() // El parentesis es para identificarlo
+@ConditionalOnProperty(name = "service.products", havingValue = "json") // havingValue = es el nombre que se quiere
+                                                                        // colocar el servicio
 public class ProductServiceJSONImpl implements ProductService {
 
     // Serialización, coonvetir objetos

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import com.apirest.demo.domain.Product;
@@ -11,6 +12,7 @@ import com.apirest.demo.domain.Product;
 @Service("listResourseService")
 // indicar a Spring que esto es un Bean de servicio para que lo almacene para
 // que cuando se quiera hacer una instancia (dependencia) y poder inyectarla
+@ConditionalOnProperty(name = "service.products", havingValue = "list")
 public class ProductsServiceImpl implements ProductService {
     // Aqui ira toda la logica de la gestión de los productos
     List<Product> products = new ArrayList<>(Arrays.asList(
