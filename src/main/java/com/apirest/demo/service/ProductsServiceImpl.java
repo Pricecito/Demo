@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.apirest.demo.domain.Product;
 
-@Service
+@Service("listResourseService")
 // indicar a Spring que esto es un Bean de servicio para que lo almacene para
 // que cuando se quiera hacer una instancia (dependencia) y poder inyectarla
 public class ProductsServiceImpl implements ProductService {

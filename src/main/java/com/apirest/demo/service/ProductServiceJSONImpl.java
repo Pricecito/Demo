@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 //Primary se usa para resolver conflictos cuando hay multiples beans del mismo tipo en la app indicando cual de ellos debe ser preferido.
 @Primary
-@Service
+@Service("jsonResourseService") // El parentesis es para identificarlo
 public class ProductServiceJSONImpl implements ProductService {
 
     // Serialización, coonvetir objetos
