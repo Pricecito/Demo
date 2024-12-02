@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 
 import com.apirest.demo.domain.Product;
 
-@Lazy
+@Lazy // @Lazy permite porponer la creacion del bean de servicio hasta que realmente
+      // se use o se necesite instanciar, de manera que ahorremos recursos en el
+      // arranque
+
 @Service("listResourseService")
 // indicar a Spring que esto es un Bean de servicio para que lo almacene para
 // que cuando se quiera hacer una instancia (dependencia) y poder inyectarla
