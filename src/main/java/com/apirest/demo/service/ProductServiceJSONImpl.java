@@ -19,6 +19,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
                                                                         // colocar el servicio
 public class ProductServiceJSONImpl implements ProductService {
 
+    public ProductServiceJSONImpl() {
+        System.out.println("Instancia de la clase Product ServiceJSONImpl");
+    }
+
     // Serialización, coonvetir objetos
     @Override
     public List<Product> getProducts() {
