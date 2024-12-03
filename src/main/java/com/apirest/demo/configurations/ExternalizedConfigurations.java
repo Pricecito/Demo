@@ -9,18 +9,13 @@ import org.springframework.context.annotation.Configuration;
 // haciendo uso de una prefijo o prefix del configuration properties
 @ConfigurationProperties(prefix = "app")
 public class ExternalizedConfigurations {
+    // las condifuguraciones y atributos dependen del nombre dado al atributo, este
+    // debe coincidir con el guardado en application. properties
 
     private String name;
     private String version;
-    private String autor;
     private String language;
-
-    public ExternalizedConfigurations(String name, String version, String country, String language) {
-        this.name = name;
-        this.version = version;
-        this.autor = country;
-        this.language = language;
-    }
+    private String autor;
 
     public String getName() {
         return name;
@@ -58,7 +53,7 @@ public class ExternalizedConfigurations {
         return "ExternalizedConfigurations: " + "\n" +
                 "name='" + this.name + '\'' + "\n" +
                 "version='" + this.version + '\'' + "\n" +
-                "country='" + this.autor + '\'' + "\n" +
+                "autor='" + this.autor + '\'' + "\n" +
                 "idioma='" + this.language + '\'' + "\n";
     }
 
