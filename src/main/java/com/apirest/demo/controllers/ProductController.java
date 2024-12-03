@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.apirest.demo.configurations.ExternalizedConfigurations;
 import com.apirest.demo.service.ProductService;
 
 @RestController
@@ -28,8 +29,12 @@ public class ProductController {
     @Lazy
     private ProductService productService;
 
+    @Autowired
+    private ExternalizedConfigurations externalizedConfigurations;
+
     @GetMapping
     public ResponseEntity<?> getProducts() {
+        System.out.println(externalizedConfigurations.toString());
         return ResponseEntity.ok(productService.getProducts());
     }
 
